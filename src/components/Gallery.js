@@ -17,8 +17,8 @@ function Gallery() {
 
     // doc WHAT useEffect DISPLAY
     return (
-        <div>
-          <h1>Dog Gallery</h1>
+        <div style={{ textAlign: 'center', padding: '0 20px' }}>
+          <h1 style={{ margin: '20px 0', fontSize: '2em' }}>Dog Gallery</h1>
           {/* doc IMAGES DIV */}
           <div
             style={{
@@ -27,7 +27,7 @@ function Gallery() {
               gap: '20px', // doc SPACE BETWEEN EACH IMAGE
               justifyContent: 'space-around', // doc EQUAL SPACE BETWEEN IMAGES AND EDGES
               padding: '0 20px',
-              marginBottom: '100px' // doc ADD SPACE BELOW THE IMAGES
+              marginBottom: '25px' // doc ADD SPACE BELOW THE IMAGES
             }}
           >
             {dogImages.map((img, index) => (
@@ -38,6 +38,7 @@ function Gallery() {
                   height: '200px',
                   overflow: 'hidden', // doc STOPPING IMAGES OVERFLOW
                   borderRadius: '8px',
+                  border: '3px solid black', // doc ADD BLACK BORDER
                 }}
               >
                 <img
@@ -53,7 +54,7 @@ function Gallery() {
             ))}
           </div>
         </div>
-      );
+    );
 }
 
 // doc EXPORT GALLERY => CAN BE IMPORTED FROM OTHER FILES

@@ -16,7 +16,7 @@
 }
 
 .nav-text {
-  color: white;
+  color: rgb(233, 237, 222);
   position: absolute;
   left: 100%; /* Commence à droite de l'icône */
   margin-left: 15px; /* Espacement entre l'icône et le texte */
@@ -35,3 +35,4 @@
 body {
   background-color: rgba(240,233,221,255)
 }
+

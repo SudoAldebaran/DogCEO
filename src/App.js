@@ -20,26 +20,29 @@ import Footer from './components/Footer';
 
 // doc SVG LOGO
 import { ReactComponent as Logo } from './assets/dogCEO_logo.svg';
+import { ReactComponent as SearchLogo } from './assets/dogCEO_search.svg';
+import { ReactComponent as HomeLogo } from './assets/dogCEO_home.svg';
+import { ReactComponent as GalleryLogo } from './assets/dogCEO_gallery.svg';
 
 // doc MAIN REACT APP FUNCTION
 function App() {
   return (
     <Router>
-      <div style={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
-        minHeight: '100vh' 
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh'
       }}>
-        <nav style={{ 
-          width: '100%', 
-          backgroundColor: 'rgb(56, 95, 113)', 
-          padding: '10px 0', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center' 
+        <nav style={{
+          width: '100%',
+          backgroundColor: 'rgb(56, 95, 113)',
+          padding: '10px 0',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
         }}>
           <div style={{ marginLeft: '20px' }}>
-            <Logo style={{ width: '60px', height: '60px', color: 'rgb(233, 237, 222)' }} />
+            <Logo style={{ width: '6rem', height: '6rem', color: 'rgb(233, 237, 222)' }} />
           </div>
           <ul style={{
             display: 'flex',
@@ -52,19 +55,19 @@ function App() {
           }}>
             <li className="nav-item" style={{ margin: '0 80px' }}>
               <Link to="/">
-                <i className="bi bi-house nav-icon"></i> {/* doc HOME ICON */}
+                <HomeLogo style={{ width: '2rem', height: '2rem', color: 'rgb(233, 237, 222)' }} /> {/* doc SEARCH ICON */}
                 <span className="nav-text">Home</span>
               </Link>
             </li>
             <li className="nav-item" style={{ margin: '0 80px' }}>
               <Link to="/gallery">
-                <i className="bi bi-images nav-icon"></i> {/* doc GALLERY ICON */}
+                <GalleryLogo style={{ width: '3rem', height: '3rem', color: 'rgb(233, 237, 222)' }} /> {/* doc SEARCH ICON */}
                 <span className="nav-text">Dog Gallery</span>
               </Link>
             </li>
             <li className="nav-item" style={{ margin: '0 80px' }}>
               <Link to="/search">
-                <i className="bi bi-search nav-icon"></i> {/* doc SEARCH ICON */}
+                <SearchLogo style={{ width: '2rem', height: '2rem', color: 'rgb(233, 237, 222)' }} /> {/* doc SEARCH ICON */}
                 <span className="nav-text">Dog Breed Search</span>
               </Link>
             </li>
