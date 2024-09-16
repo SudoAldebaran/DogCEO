@@ -24,25 +24,51 @@ function Search() {
                     setDogImages([]); // doc SET ARRAY TO EMPTY
                     setError(true);
                 }
-            }
-            )
+            })
             // doc ERROR HANDLING IF BREED NOT FOUND
             .catch(() => {
                 setDogImages([]);
                 setError(true);
-            }
-            );
+            });
 
     };
 
     return (
-        <div>
-            <h1>Dog Breed Search</h1>
-            <input type="text" placeholder="Enter breed"
-                value={breed} // doc SETTING INPUT VALUE TO BREED
-                onChange={(e) => setBreed(e.target.value.toLowerCase())} // doc FORCING INPUT TO LOWERCASE
-            />
-            <button onClick={fetchBreedImages}>Search</button>
+        <div style={{ textAlign: 'center' }}>
+            <h1 style={{ marginBottom: '50px', marginTop: '50px' }}>Dog Breed Search</h1> {/* Ajout de l'espace sous le titre */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+                <input
+                    type="text"
+                    placeholder="Enter breed"
+                    value={breed} // doc SETTING INPUT VALUE TO BREED
+                    onChange={(e) => setBreed(e.target.value.toLowerCase())} // doc FORCING INPUT TO LOWERCASE
+                    style={{
+                        padding: '10px',
+                        borderRadius: '20px', // Coins arrondis pour la barre de recherche
+                        border: '1px solid #ccc',
+                        outline: 'none',
+                        width: '300px', // Largeur fixe pour la barre de recherche
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // Ombre légère pour un effet 3D
+                    }}
+                />
+                <button
+                    onClick={fetchBreedImages}
+                    style={{
+                        padding: '10px 20px',
+                        borderRadius: '20px', // Coins arrondis pour le bouton
+                        border: 'none',
+                        backgroundColor: 'rgb(92, 128, 188)', // Couleur de fond
+                        color: 'white', // Couleur du texte
+                        cursor: 'pointer',
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // Ombre légère pour un effet 3D
+                        transition: 'background-color 0.3s ease', // Transition pour l'effet de survol
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgb(76, 104, 150)'}
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'rgb(92, 128, 188)'}
+                >
+                    Search
+                </button>
+            </div>
 
             {/* Affichage conditionnel du message d'erreur si error est true */}
             {error && <p style={{ color: 'red' }}>This breed doesn't exist!</p>}

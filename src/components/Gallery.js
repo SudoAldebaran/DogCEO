@@ -1,5 +1,5 @@
 // doc NECESSARY LIBRARIES IMPORT
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 // doc MAIN FUNCTION GALLERY
 function Gallery() {
@@ -7,8 +7,8 @@ function Gallery() {
 
     // doc API REQUEST
     useEffect(() => {
-        // doc HTTP GET REQUEST FROM THE API => 6 RANDOM PICTURE
-        fetch('https://dog.ceo/api/breeds/image/random/6')
+        // doc HTTP GET REQUEST FROM THE API => 9 RANDOM PICTURES
+        fetch('https://dog.ceo/api/breeds/image/random/9')
         // doc WHEN RESPONSE RECEIVED => JSON CONVERT
         .then(response => response.json())
         // doc WHEN JSON DATA RECEIVED => UPDATE setDogImage WITH URL
@@ -26,7 +26,8 @@ function Gallery() {
               flexWrap: 'wrap', // doc NEXT LINE IF NECESSARY
               gap: '20px', // doc SPACE BETWEEN EACH IMAGE
               justifyContent: 'space-around', // doc EQUAL SPACE BETWEEN IMAGES AND EDGES
-              padding: '0 20px', 
+              padding: '0 20px',
+              marginBottom: '100px' // doc ADD SPACE BELOW THE IMAGES
             }}
           >
             {dogImages.map((img, index) => (
@@ -45,7 +46,7 @@ function Gallery() {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover', // doc ADJUST THE IMAGE TO COVER THE DIV Ajuste l'image pour couvrir le conteneur
+                    objectFit: 'cover', // doc ADJUST THE IMAGE TO COVER THE DIV
                   }}
                 />
               </div>

@@ -1,26 +1,37 @@
-.navbar {
-  background-color: #f8f9fa; /* Couleur de fond de la navigation */
-  padding: 10px; /* Padding autour de la barre de navigation */
+/* App.css */
+.nav-icon {
+  font-size: 1.5rem;
+  color: rgb(233, 237, 222);
+  transition: color 0.3s ease;
 }
 
-.navbar-menu {
-  list-style-type: none; /* Enlever les puces */
-  margin: 0;
-  padding: 0;
-  display: flex; /* Alignement horizontal */
-  justify-content: center; /* Centrer les éléments */
+.nav-icon:hover {
+  color: rgb(233, 237, 222);
 }
 
-.navbar-item {
-  margin: 0 15px; /* Espacement entre les éléments */
+.nav-item {
+  position: relative; /* Nécessaire pour positionner le texte absolu */
+  display: flex;
+  align-items: center;
 }
 
-.navbar-item a {
-  text-decoration: none; /* Enlever le soulignement des liens */
-  color: #007bff; /* Couleur des liens */
-  font-size: 18px; /* Taille de la police */
+.nav-text {
+  color: white;
+  position: absolute;
+  left: 100%; /* Commence à droite de l'icône */
+  margin-left: 15px; /* Espacement entre l'icône et le texte */
+  opacity: 0; /* Masquer le texte par défaut */
+  white-space: nowrap; /* Empêcher le retour à la ligne */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  top: 50%; /* Centrer verticalement */
+  transform: translateY(-50%) translateX(10px); /* Ajuster verticalement et horizontalement */
 }
 
-.navbar-item a:hover {
-  color: #0056b3; /* Couleur des liens au survol */
+.nav-item:hover .nav-text {
+  opacity: 1; /* Afficher le texte au survol */
+  transform: translateY(-50%) translateX(0); /* Déplacer le texte à sa position d'origine */
+}
+
+body {
+  background-color: rgba(240,233,221,255)
 }
