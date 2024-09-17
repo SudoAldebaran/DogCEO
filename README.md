@@ -28,6 +28,6 @@ A mini-website displaying real-time information from the Dog CEO API with three 
    ```bash
    npm start
 
-##Usage
+## Usage
 
 Open your browser and go to http://localhost:3000 to view the site.
