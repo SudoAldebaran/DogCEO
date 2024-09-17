@@ -15,3 +15,19 @@ A mini-website displaying real-time information from the Dog CEO API with three 
 1. Clone the repository:
    ```bash
    git clone https://github.com/SudoAldebaran/DogCEO.git
+
+2. Navigate to the repository:
+   ```bash
+   cd DogCEO
+
+3. Install dependecies:
+   ```bash
+   npm install
+
+4. Install dependecies:
+   ```bash
+   npm start
+
+##Usage
+
+Open your browser and go to http://localhost:3000 to view the site.
