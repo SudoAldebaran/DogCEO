@@ -21,7 +21,7 @@ function Gallery() {
         setSelectedImage(null);
     };
 
-    // doc WHAT useEffect DISPLAY
+    // doc WHAT useEffect DISPLAYS
     return (
         <div style={{ textAlign: 'center', padding: '0 20px' }}>
           <h1 style={{ margin: '20px 0', fontSize: '2em' }}>Dog Gallery</h1>
@@ -73,13 +73,13 @@ function Gallery() {
                     left: '0',
                     width: '100vw',
                     height: '100vh',
-                    backgroundColor: 'rgba(0, 0, 0, 0.8)', // Dark transparent background
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)', // doc DARK TRANSPARENT BACKGROUND
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     zIndex: '999',
                 }}
-                onClick={closeModal} // Close modal when clicking outside the image
+                onClick={closeModal} // doc CLOSE MODAL WHEN CLICKING OUTSIDE THE IMAGE
             >
                 <div
                     style={{
@@ -88,7 +88,7 @@ function Gallery() {
                         maxWidth: '600px',
                         height: 'auto',
                         padding: '10px',
-                        backgroundColor: 'white', // Background for image
+                        backgroundColor: 'white', // doc BACKGROUND FOR IMAGE
                         borderRadius: '8px',
                         textAlign: 'center',
                     }}
@@ -108,16 +108,16 @@ function Gallery() {
                             position: 'absolute',
                             top: '10px',
                             right: '10px',
-                            backgroundColor: 'transparent', // Suppression de la couleur de fond
-                            color: '#333', // Couleur de la croix par défaut
-                            border: 'none', // Suppression de la bordure
+                            backgroundColor: 'transparent', // doc REMOVE BACKGROUND COLOR
+                            color: '#333', // doc DEFAULT CROSS COLOR
+                            border: 'none', // doc REMOVE BORDER
                             cursor: 'pointer',
-                            fontSize: '24px', // Augmentation de la taille de la croix
-                            transition: 'color 0.3s ease', // Ajout d'une transition pour l'effet de survol
+                            fontSize: '24px', // doc ENLARGE CROSS SIZE
+                            transition: 'color 0.3s ease', // doc ADD TRANSITION ON HOVER
                             marginTop: '-6px',
                         }}
-                        onMouseOver={(e) => e.currentTarget.style.color = 'white'} // Changement de couleur au survol
-                        onMouseOut={(e) => e.currentTarget.style.color = '#333'} // Retour à la couleur d'origine
+                        onMouseOver={(e) => e.currentTarget.style.color = 'white'} // doc CHANGE COLOR ON HOVER
+                        onMouseOut={(e) => e.currentTarget.style.color = '#333'} // doc RESET COLOR ON MOUSE OUT
                     >
                         &times;
                     </button>

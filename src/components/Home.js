@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 // doc MAIN FUNCTION HOME
 function Home() {
     const [dogImage, setDogImage] = useState('');
-    const [welcomeText, setWelcomeText] = useState('Welcome'); // État pour le texte
+    const [welcomeText, setWelcomeText] = useState('Welcome'); // doc STATE FOR THE WELCOME TEXT
 
     // doc API REQUEST
     useEffect(() => {
@@ -16,7 +16,7 @@ function Home() {
             .then(data => setDogImage(data.message));
     }, []);
 
-    // doc WHAT useEffect DISPLAY
+    // doc WHAT useEffect DISPLAYS
     return (
         <div>
             <div style={{ position: 'relative', width: '100%', height: '400px' }}>
@@ -40,8 +40,8 @@ function Home() {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent gray overlay
-                    zIndex: 1 // Ensures overlay is above the image but below the text
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // doc SEMI-TRANSPARENT GRAY OVERLAY
+                    zIndex: 1 // doc ENSURES OVERLAY IS ABOVE THE IMAGE BUT BELOW THE TEXT
                 }} />
                 {/* doc WELCOME TEXT */}
                 <h1
@@ -50,12 +50,12 @@ function Home() {
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        color: 'white', // Text color for visibility
-                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Optional: text shadow for better readability
-                        zIndex: 2 // Ensures text is above the overlay
+                        color: 'white', // doc TEXT COLOR FOR VISIBILITY
+                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // doc OPTIONAL: TEXT SHADOW FOR BETTER READABILITY
+                        zIndex: 2 // doc ENSURES TEXT IS ABOVE THE OVERLAY
                     }}
-                    onMouseEnter={() => setWelcomeText('Waf Waf')} // Change text on hover
-                    onMouseLeave={() => setWelcomeText('Welcome')} // Revert text on mouse leave
+                    onMouseEnter={() => setWelcomeText('Waf Waf')} // doc CHANGE TEXT ON HOVER
+                    onMouseLeave={() => setWelcomeText('Welcome')} // doc REVERT TEXT ON MOUSE LEAVE
                 >
                     {welcomeText}
                 </h1>
@@ -71,24 +71,22 @@ function Home() {
             }}>
                 <h2>Welcome to Canine Vista!</h2>
                 <p>
-                    We are delighted to welcome you to <strong>Canine Vista</strong>, your ultimate destination for all things dog-related! Our site is designed for dog lovers, owners, and anyone who wants to learn more about these amazing animals.
+                    Welcome to <strong>Canine Vista</strong>, your go-to platform for exploring everything about dogs! Whether you're here to browse through delightful dog images or to search for specific breeds, we've got you covered.
                 </p>
                 <p>
-                    <strong>What you'll find here:</strong>
+                    <strong>Features available on our site:</strong>
                 </p>
                 <ul style={{ listStyleType: 'disc', textAlign: 'left', margin: '0 auto', maxWidth: '600px' }}>
-                    <li><strong>Dog Gallery:</strong> Explore our collection of adorable dog photos. Each image captures the beauty and unique personality of these loyal companions.</li>
-                    <li><strong>Breed Search:</strong> Discover detailed information on different dog breeds. Learn all about the characteristics, needs, and quirks of each breed to find the perfect companion for you.</li>
-                    <li><strong>Inspirations and Tips:</strong> Find inspiring ideas and practical tips for taking care of your dog. From nutrition to healthcare, we have resources to help you provide the best for your loyal friend.</li>
+                    <li><strong>Dog Gallery:</strong> Browse a collection of wonderful dog photos showcasing the charm and uniqueness of various breeds.</li>
+                    <li><strong>Breed Search:</strong> Display all available dog photos based on the breed you search for.</li>
                 </ul>
                 <p>
-                    At <strong>Canine Vista</strong>, we believe every dog deserves recognition and love. That's why we've created a platform where you can connect with other dog lovers, share your experiences, and enrich your knowledge about our four-legged friends.
+                    At <strong>Canine Vista</strong>, we aim to provide dog enthusiasts with an engaging and informative experience. Explore our gallery, search for breeds, and immerse yourself in the world of dogs!
                 </p>
                 <p>
-                    We hope you enjoy your visit and find everything you need to celebrate your love for dogs. Feel free to explore our site and let us know your feedback!
+                    Enjoy your visit and feel free to share your feedback with us!
                 </p>
             </section>
-
         </div>
     );
 }

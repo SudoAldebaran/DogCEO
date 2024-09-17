@@ -6,13 +6,13 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 // doc BOOTSTRAP IMPORT
 import 'bootstrap/dist/css/bootstrap.min.css';
-// doc BOOTSTRAP ICONS IMPORT
+import { Navbar, Nav, Container } from 'react-bootstrap'; 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // doc CSS IMPORT
-import './App.css'; // Assure-toi d'importer le fichier CSS
+import './App.css';
 
-// doc COMPONENETS IMPORT
+// doc COMPONENTS IMPORT
 import Home from './components/Home';
 import Gallery from './components/Gallery';
 import Search from './components/Search';
@@ -28,51 +28,31 @@ import { ReactComponent as GalleryLogo } from './assets/dogCEO_gallery.svg';
 function App() {
   return (
     <Router>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh'
-      }}>
-        <nav style={{
-          width: '100%',
-          backgroundColor: 'rgb(56, 95, 113)',
-          padding: '10px 0',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
-          <div style={{ marginLeft: '20px' }}>
-            <Logo style={{ width: '6rem', height: '6rem', color: 'rgb(233, 237, 222)' }} />
-          </div>
-          <ul style={{
-            display: 'flex',
-            justifyContent: 'center',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-            flex: 1,
-            gap: '20px' 
-          }}>
-            <li className="nav-item" style={{ margin: '0 80px' }}>
-              <Link to="/">
-                <HomeLogo style={{ width: '2rem', height: '2rem', color: 'rgb(233, 237, 222)' }} /> {/* doc HOME ICON */}
-                <span className="nav-text">Home</span>
-              </Link>
-            </li>
-            <li className="nav-item" style={{ margin: '0 80px' }}>
-              <Link to="/gallery">
-                <GalleryLogo style={{ width: '2.7rem', height: '2.7rem', color: 'rgb(233, 237, 222)' }} /> {/* doc GALLERY ICON */}
-                <span className="nav-text">Dog Gallery</span>
-              </Link>
-            </li>
-            <li className="nav-item" style={{ margin: '0 80px' }}>
-              <Link to="/search">
-                <SearchLogo style={{ width: '2rem', height: '2rem', color: 'rgb(233, 237, 222)' }} /> {/* doc SEARCH ICON */}
-                <span className="nav-text">Dog Breed Search</span>
-              </Link>
-            </li>
-          </ul>
-        </nav>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'rgba(240,233,221,255)' }}>
+        <Navbar expand="lg">
+          <Container>
+            <Navbar.Brand as={Link} to="/">
+              <Logo style={{ width: '4rem', height: '4rem', color: 'rgb(233, 237, 222)' }} /> {/* doc LOGO */}
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="navbar-nav">
+                <Nav.Link as={Link} to="/" className="nav-item">
+                  <HomeLogo style={{ width: '2rem', height: '2rem', fill: 'rgb(233, 237, 222)' }} /> {/* doc ICONE HOME */}
+                  <span className="nav-text">Home</span>
+                </Nav.Link>
+                <Nav.Link as={Link} to="/gallery" className="nav-item">
+                  <GalleryLogo style={{ width: '2.5rem', height: '2.5rem', fill: 'rgb(233, 237, 222)' }} /> {/* doc ICONE GALLERY */}
+                  <span className="nav-text">Dog Gallery</span>
+                </Nav.Link>
+                <Nav.Link as={Link} to="/search" className="nav-item">
+                  <SearchLogo style={{ width: '2rem', height: '2rem', fill: 'rgb(233, 237, 222)' }} /> {/* doc ICONE SEARCH */}
+                  <span className="nav-text">Dog Breed Search</span>
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
 
         {/* doc ALL ROUTES */}
         <main style={{ flex: 1 }}>
@@ -89,4 +69,5 @@ function App() {
   );
 }
 
+// doc EXPORT APP => CAN BE IMPORTED FROM OTHER FILES
 export default App;

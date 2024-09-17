@@ -12,6 +12,7 @@ function Search() {
     // doc MODAL IMAGE STATE
     const [selectedImage, setSelectedImage] = useState(null);
 
+    // doc FUNCTION TO FETCH BREED IMAGES FROM API
     const fetchBreedImages = () => {
         // doc API REQUEST URL
         fetch(`https://dog.ceo/api/breed/${breed}/images`)
@@ -39,8 +40,8 @@ function Search() {
 
     return (
         <div style={{ textAlign: 'center' }}>
-            <h1 style={{ marginBottom: '50px', marginTop: '50px' }}>Dog Breed Search</h1> {/* Ajout de l'espace sous le titre */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+            <h1 style={{ marginBottom: '50px', marginTop: '50px' }}>Dog Breed Search</h1> {/* doc ADD SPACE BELOW TITLE */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', flexDirection: 'column', gap: '10px' }}>
                 <input
                     type="text"
                     placeholder="Enter breed"
@@ -66,6 +67,8 @@ function Search() {
                         cursor: 'pointer',
                         boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
                         transition: 'background-color 0.3s ease',
+                        marginTop: '25px',
+                        marginBottom: '25px',
                     }}
                     onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#333'}
                     onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'rgb(56, 95, 113)'}
@@ -74,8 +77,8 @@ function Search() {
                 </button>
             </div>
 
-            {/* Affichage conditionnel du message d'erreur si error est true */}
-            {error && <p style={{ color: '#333', marginTop: '20px' }}>This breed doesn't exist ! <br /> Try again.</p>}
+            {/* doc CONDITIONAL DISPLAY OF ERROR MESSAGE */}
+            {error && <p style={{ color: '#333', marginTop: '20px' }}>This breed doesn't exist! <br /> Try again.</p>}
 
             <div
                 style={{
@@ -126,13 +129,13 @@ function Search() {
                         left: '0',
                         width: '100vw',
                         height: '100vh',
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Dark transparent background
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // doc DARK TRANSPARENT BACKGROUND
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
                         zIndex: '999',
                     }}
-                    onClick={closeModal} // Close modal when clicking outside the image
+                    onClick={closeModal} // doc CLOSE MODAL WHEN CLICKING OUTSIDE THE IMAGE
                 >
                     <div
                         style={{
@@ -141,7 +144,7 @@ function Search() {
                             maxWidth: '600px',
                             height: 'auto',
                             padding: '10px',
-                            backgroundColor: 'white', // Background for image
+                            backgroundColor: 'white', // doc BACKGROUND FOR IMAGE
                             borderRadius: '8px',
                             textAlign: 'center',
                         }}
@@ -161,16 +164,16 @@ function Search() {
                                 position: 'absolute',
                                 top: '10px',
                                 right: '10px',
-                                backgroundColor: 'transparent', // Suppression de la couleur de fond
-                                color: '#333', // Couleur de la croix par défaut
-                                border: 'none', // Suppression de la bordure
+                                backgroundColor: 'transparent', // doc REMOVE BACKGROUND COLOR
+                                color: '#333', // doc DEFAULT CLOSE ICON COLOR
+                                border: 'none', // doc REMOVE BORDER
                                 cursor: 'pointer',
-                                fontSize: '24px', // Augmentation de la taille de la croix
-                                transition: 'color 0.3s ease', // Ajout d'une transition pour l'effet de survol
+                                fontSize: '24px', // doc INCREASE CLOSE ICON SIZE
+                                transition: 'color 0.3s ease', // doc ADD TRANSITION FOR HOVER EFFECT
                                 marginTop: '-6px',
                             }}
-                            onMouseOver={(e) => e.currentTarget.style.color = 'white'} // Changement de couleur au survol
-                            onMouseOut={(e) => e.currentTarget.style.color = '#333'} // Retour à la couleur d'origine
+                            onMouseOver={(e) => e.currentTarget.style.color = 'white'} // doc CHANGE COLOR ON HOVER
+                            onMouseOut={(e) => e.currentTarget.style.color = '#333'} // doc REVERT COLOR ON MOUSE OUT
                         >
                             &times;
                         </button>
