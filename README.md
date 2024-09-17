@@ -24,7 +24,7 @@ A mini-website displaying real-time information from the Dog CEO API with three 
    ```bash
    npm install
 
-4. Install dependecies:
+4. Run the server:
    ```bash
    npm start
 
