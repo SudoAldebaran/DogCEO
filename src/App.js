@@ -51,17 +51,17 @@ function App() {
             padding: 0,
             margin: 0,
             flex: 1,
-            gap: '20px'  // Ajouter un espacement entre les éléments de la liste
+            gap: '20px' 
           }}>
             <li className="nav-item" style={{ margin: '0 80px' }}>
               <Link to="/">
-                <HomeLogo style={{ width: '2rem', height: '2rem', color: 'rgb(233, 237, 222)' }} /> {/* doc SEARCH ICON */}
+                <HomeLogo style={{ width: '2rem', height: '2rem', color: 'rgb(233, 237, 222)' }} /> {/* doc HOME ICON */}
                 <span className="nav-text">Home</span>
               </Link>
             </li>
             <li className="nav-item" style={{ margin: '0 80px' }}>
               <Link to="/gallery">
-                <GalleryLogo style={{ width: '3rem', height: '3rem', color: 'rgb(233, 237, 222)' }} /> {/* doc SEARCH ICON */}
+                <GalleryLogo style={{ width: '2.7rem', height: '2.7rem', color: 'rgb(233, 237, 222)' }} /> {/* doc GALLERY ICON */}
                 <span className="nav-text">Dog Gallery</span>
               </Link>
             </li>

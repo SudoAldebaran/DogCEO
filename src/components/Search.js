@@ -75,7 +75,7 @@ function Search() {
             </div>
 
             {/* Affichage conditionnel du message d'erreur si error est true */}
-            {error && <p style={{ color: 'red' }}>This breed doesn't exist!</p>}
+            {error && <p style={{ color: '#333', marginTop: '20px' }}>This breed doesn't exist ! <br /> Try again.</p>}
 
             <div
                 style={{
@@ -161,18 +161,20 @@ function Search() {
                                 position: 'absolute',
                                 top: '10px',
                                 right: '10px',
-                                backgroundColor: 'red',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '50%',
-                                width: '30px',
-                                height: '30px',
+                                backgroundColor: 'transparent', // Suppression de la couleur de fond
+                                color: '#333', // Couleur de la croix par défaut
+                                border: 'none', // Suppression de la bordure
                                 cursor: 'pointer',
-                                fontSize: '16px',
+                                fontSize: '24px', // Augmentation de la taille de la croix
+                                transition: 'color 0.3s ease', // Ajout d'une transition pour l'effet de survol
+                                marginTop: '-6px',
                             }}
+                            onMouseOver={(e) => e.currentTarget.style.color = 'white'} // Changement de couleur au survol
+                            onMouseOut={(e) => e.currentTarget.style.color = '#333'} // Retour à la couleur d'origine
                         >
                             &times;
                         </button>
+
                     </div>
                 </div>
             )}
