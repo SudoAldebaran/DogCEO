@@ -14,4 +14,4 @@ A mini-website displaying real-time information from the Dog CEO API with three 
 ## Setup and Installation
 1. Clone the repository:
    ```bash
-   git clone <URL de votre repository GitHub>
+   git clone https://github.com/SudoAldebaran/DogCEO.git
